@@ -1,5 +1,7 @@
 plugins {
     id("java")
+    id("org.springframework.boot") version "2.7.5"
+    id("io.spring.dependency-management") version "1.0.11.RELEASE"
 }
 
 group = "com.pomori"
@@ -12,16 +14,16 @@ repositories {
 dependencies {
 
     // Spring
-    implementation("org.springframework.boot:spring-boot-starter-web:3.3.3")
+    implementation("org.springframework.boot:spring-boot-starter-web:2.7.5")
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa:2.7.5")
     implementation("org.springframework.boot:spring-boot-starter-validation")
-    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.springframework.boot:spring-boot-starter-security")
 
     // MySQL
-    implementation("mysql:mysql-connector-java")
+    runtimeOnly("com.mysql:mysql-connector-j")
 
     // Lombok
-    implementation("org.lombok:lombok")
+    implementation("org.projectlombok:lombok:1.18.30")
 }
 
 tasks.test {
