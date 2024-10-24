@@ -1,6 +1,8 @@
 package com.pomori.domain.auth.controller;
 
-import com.pomori.domain.auth.dto.request.SignupRequest;
+import com.pomori.domain.auth.dto.request.AuthRequest;
+import com.pomori.domain.auth.dto.response.TokenResponse;
+import com.pomori.domain.auth.service.LoginService;
 import com.pomori.domain.auth.service.SignupService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.validation.annotation.Validated;
@@ -20,14 +22,25 @@ public class AuthController {
 
     private final SignupService signupService;
 
+    private final LoginService loginService;
+
     @PostMapping("/signup")
     void signup(
             @Valid
             @NotNull
             @RequestBody
-            SignupRequest signupRequest
+            AuthRequest authRequest
     ) {
-        signupService.signup(signupRequest);
+        signupService.signup(authRequest);
     }
 
+    @PostMapping("/login")
+    TokenResponse login(
+            @Valid
+            @NotNull
+            @RequestBody
+            AuthRequest authRequest
+    ) {
+        return loginService.login(authRequest);
+    }
 }
