@@ -1,6 +1,6 @@
 package com.pomori.domain.auth.service;
 
-import com.pomori.domain.annotation.UseCase;
+import com.pomori.domain.annotation.ReadOnlyUseCase;
 import com.pomori.domain.auth.dto.request.AuthRequest;
 import com.pomori.domain.auth.dto.response.TokenResponse;
 import com.pomori.domain.exception.PomoriException;
@@ -14,7 +14,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import java.util.Optional;
 
 @RequiredArgsConstructor
-@UseCase
+@ReadOnlyUseCase
 public class LoginService {
 
     private final UserRepository userRepository;
