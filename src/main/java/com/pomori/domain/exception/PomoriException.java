@@ -15,6 +15,18 @@ public class PomoriException extends RuntimeException {
         return message;
     }
 
+    public PomoriException(HttpStatus status) {
+        super(status.getReasonPhrase());
+        this.status = status;
+        this.message = status.getReasonPhrase();
+    }
+
+    public PomoriException(HttpStatus status, Throwable cause) {
+        super(status.getReasonPhrase(), cause);
+        this.status = status;
+        this.message = status.getReasonPhrase();
+    }
+
     public PomoriException(HttpStatus status, String message) {
         super(message);
         this.status = status;
