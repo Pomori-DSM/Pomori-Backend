@@ -24,6 +24,11 @@ dependencies {
 
     // Lombok
     implementation("org.projectlombok:lombok:1.18.30")
+
+    // Jwt
+    implementation("io.jsonwebtoken:jjwt-api:0.11.5")
+    runtimeOnly("io.jsonwebtoken:jjwt-impl:0.11.5")
+    implementation("io.jsonwebtoken:jjwt-jackson:0.11.5")
 }
 
 tasks.test {
