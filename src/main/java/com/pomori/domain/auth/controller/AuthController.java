@@ -25,7 +25,7 @@ public class AuthController {
     private final LoginService loginService;
 
     @PostMapping("/signup")
-    void signup(
+    public void signup(
             @Valid
             @NotNull
             @RequestBody
@@ -35,11 +35,11 @@ public class AuthController {
     }
 
     @PostMapping("/login")
-    TokenResponse login(
+    public TokenResponse login(
             @Valid
             @NotNull
             @RequestBody
-            AuthRequest authRequest
+        AuthRequest authRequest
     ) {
         return loginService.login(authRequest);
     }
