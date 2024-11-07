@@ -39,7 +39,7 @@ public class AuthController {
             @Valid
             @NotNull
             @RequestBody
-        AuthRequest authRequest
+            AuthRequest authRequest
     ) {
         return loginService.login(authRequest);
     }

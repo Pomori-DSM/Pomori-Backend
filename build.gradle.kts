@@ -23,7 +23,8 @@ dependencies {
     runtimeOnly("com.mysql:mysql-connector-j")
 
     // Lombok
-    implementation("org.projectlombok:lombok:1.18.30")
+    compileOnly("org.projectlombok:lombok:1.18.30")
+    annotationProcessor("org.projectlombok:lombok:1.18.30")
 
     // Jwt
     implementation("io.jsonwebtoken:jjwt-api:0.11.5")
