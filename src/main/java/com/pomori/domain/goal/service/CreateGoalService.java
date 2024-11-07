@@ -1,13 +1,13 @@
 package com.pomori.domain.goal.service;
 
+import com.pomori.domain.annotation.UseCase;
 import com.pomori.domain.goal.GoalEntity;
 import com.pomori.domain.goal.dto.request.GoalInfoRequest;
 import com.pomori.domain.goal.repository.GoalRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Component;
 
 @RequiredArgsConstructor
-@Component
+@UseCase
 public class CreateGoalService {
 
     private final GoalRepository goalRepository;

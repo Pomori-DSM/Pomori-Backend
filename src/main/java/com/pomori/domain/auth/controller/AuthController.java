@@ -28,8 +28,7 @@ public class AuthController {
     public void signup(
             @Valid
             @NotNull
-            @RequestBody
-            AuthRequest authRequest
+            @RequestBody final AuthRequest authRequest
     ) {
         signupService.signup(authRequest);
     }
@@ -38,8 +37,7 @@ public class AuthController {
     public TokenResponse login(
             @Valid
             @NotNull
-            @RequestBody
-            AuthRequest authRequest
+            @RequestBody final AuthRequest authRequest
     ) {
         return loginService.login(authRequest);
     }

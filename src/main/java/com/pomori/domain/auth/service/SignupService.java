@@ -9,6 +9,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+import java.time.LocalDateTime;
+
 @RequiredArgsConstructor
 @UseCase
 public class SignupService {
@@ -27,6 +29,7 @@ public class SignupService {
                 UserEntity.builder()
                         .username(request.username())
                         .password(passwordEncoder.encode(request.password()))
+                        .createdAt(LocalDateTime.now())
                         .build()
         );
     }

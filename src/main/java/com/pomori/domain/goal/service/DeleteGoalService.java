@@ -1,14 +1,14 @@
 package com.pomori.domain.goal.service;
 
+import com.pomori.domain.annotation.UseCase;
 import com.pomori.domain.exception.PomoriException;
 import com.pomori.domain.goal.repository.GoalRepository;
 import com.pomori.infra.security.CurrentUser;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
-import org.springframework.stereotype.Component;
 
 @RequiredArgsConstructor
-@Component
+@UseCase
 public class DeleteGoalService {
 
     private final GoalRepository goalRepository;
